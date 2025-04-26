@@ -17,3 +17,4 @@ https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html
 https://docs.spring.io/spring-data/jpa/reference/repositories/query-return-types-reference.html
 
 https://docs.spring.io/spring-data/relational/reference/repositories/null-handling.html
+![image](https://github.com/user-attachments/assets/ce2a6343-5ad9-40cf-ba21-5dd1dfbc7b82)
