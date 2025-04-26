@@ -15,3 +15,5 @@ This repository contains source code examples to support my course Spring Data J
 https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html
 
 https://docs.spring.io/spring-data/jpa/reference/repositories/query-return-types-reference.html
+
+https://docs.spring.io/spring-data/relational/reference/repositories/null-handling.html
