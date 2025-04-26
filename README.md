@@ -11,3 +11,6 @@ This repository contains source code examples to support my course Spring Data J
 
 
 ![image](https://github.com/user-attachments/assets/67f6dc9a-ff9a-4277-bb37-66b03feedd7a)
+
+https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html
+
