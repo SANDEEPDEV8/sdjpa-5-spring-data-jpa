@@ -8,3 +8,22 @@ This repository contains source code examples to support my course Spring Data J
 * Like Spring Framework Guru on [Facebook](https://www.facebook.com/springframeworkguru/)
 * Follow Spring Framework Guru on [Twitter](https://twitter.com/spring_guru)
 * Connect with John Thompson on [LinkedIn](http://www.linkedin.com/in/springguru)
+
+
+```
+
+public interface BookRepository extends JpaRepository<Book, Long> {
+@Async
+    Future<Book> queryByTitle(String title);
+---------------
+
+    @Test
+    void testBookFuture() throws ExecutionException, InterruptedException {
+        Future<Book> bookFuture = bookRepository.queryByTitle("Clean Code");
+
+        Book book = bookFuture.get();
+
+        assertNotNull(book);
+    }
+
+```
