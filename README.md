@@ -8,3 +8,6 @@ This repository contains source code examples to support my course Spring Data J
 * Like Spring Framework Guru on [Facebook](https://www.facebook.com/springframeworkguru/)
 * Follow Spring Framework Guru on [Twitter](https://twitter.com/spring_guru)
 * Connect with John Thompson on [LinkedIn](http://www.linkedin.com/in/springguru)
+
+
+# added AuthorRepository, AuthorDaoImpl
