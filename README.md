@@ -8,3 +8,34 @@ This repository contains source code examples to support my course Spring Data J
 * Like Spring Framework Guru on [Facebook](https://www.facebook.com/springframeworkguru/)
 * Follow Spring Framework Guru on [Twitter](https://twitter.com/spring_guru)
 * Connect with John Thompson on [LinkedIn](http://www.linkedin.com/in/springguru)
+
+
+```
+ @Override
+    public List<Book> findAllBooks(Pageable pageable) {
+        return jdbcTemplate.query("SELECT * FROM book limit ? offset ?", getBookMapper(), pageable.getPageSize(),
+                pageable.getOffset());
+    }
+
+    @Override
+    public List<Book> findAllBooks(int pageSize, int offset) {
+        return jdbcTemplate.query("SELECT * FROM book limit ? offset ?", getBookMapper(), pageSize, offset);
+    }
+--------------
+ @Test
+    void findAllBooksPage1_pageable() {
+        List<Book> books = bookDao.findAllBooks(PageRequest.of(0, 10));
+
+        assertThat(books).isNotNull();
+        assertThat(books.size()).isEqualTo(10);
+    }
+
+    @Test
+    void findAllBooksPage2_pageable() {
+        List<Book> books = bookDao.findAllBooks(PageRequest.of(1, 10));
+
+        assertThat(books).isNotNull();
+        assertThat(books.size()).isEqualTo(10);
+    }
+
+```
