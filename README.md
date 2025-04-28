@@ -8,3 +8,29 @@ This repository contains source code examples to support my course Spring Data J
 * Like Spring Framework Guru on [Facebook](https://www.facebook.com/springframeworkguru/)
 * Follow Spring Framework Guru on [Twitter](https://twitter.com/spring_guru)
 * Connect with John Thompson on [LinkedIn](http://www.linkedin.com/in/springguru)
+
+
+```
+    @Override
+    public List<Book> findAllBooks(int pageSize, int offset) {
+        Pageable pageable = PageRequest.ofSize(pageSize);
+
+        if (offset > 0) {
+            pageable = pageable.withPage(offset / pageSize);
+        } else {
+            pageable = pageable.withPage(0);
+        }
+
+        return this.findAllBooks(pageable);
+    }
+------------
+  @Test
+    void findAllBooksPage1_SortByTitle() {
+        List<Book> books = bookDao.findAllBooksSortByTitle(PageRequest.of(0, 10,
+                Sort.by(Sort.Order.desc("title"))));
+
+        assertThat(books).isNotNull();
+        assertThat(books.size()).isEqualTo(10);
+    }
+
+```
