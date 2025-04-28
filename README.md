@@ -17,4 +17,11 @@ This repository contains source code examples to support my course Spring Data J
 
         return bookPage.getContent();
     }
+
+
+----
+ @Override
+    public List<Author> findAllAuthorsByLastName(String lastname, Pageable pageable) {
+        return authorRepository.findAuthorByLastName(lastname, pageable).getContent();
+    }    
 ```
