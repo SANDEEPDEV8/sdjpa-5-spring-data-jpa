@@ -8,3 +8,19 @@ This repository contains source code examples to support my course Spring Data J
 * Like Spring Framework Guru on [Facebook](https://www.facebook.com/springframeworkguru/)
 * Follow Spring Framework Guru on [Twitter](https://twitter.com/spring_guru)
 * Connect with John Thompson on [LinkedIn](http://www.linkedin.com/in/springguru)
+
+```
+
+public interface BookRepository extends JpaRepository<Book, Long> {
+
+    @Query(value = "SELECT * FROM book WHERE title = :title", nativeQuery = true)
+    Book findBookByTitleNativeQuery(@Param("title") String title);
+
+---------------------------
+ @Test
+    void testBookQueryNative() {
+        Book book = bookRepository.findBookByTitleNativeQuery("Clean Code");
+        assertThat(book).isNotNull();
+    }
+
+```
